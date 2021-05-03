@@ -12,7 +12,7 @@ stages:
         Public:
           SubcriptionConfigurations:
             - $(sub-config-azure-cloud-test-resources)
-            - $(sub-config-cosmos-azure-cloud-test-resources)
+#            - $(sub-config-cosmos-azure-cloud-test-resources)
       MatrixConfigs:
         - Name: Cosmos_live_test
           Path: sdk/cosmos/platform-matrix.json
@@ -42,7 +42,7 @@ stages:
         Public:
           SubcriptionConfigurations:
             - $(sub-config-azure-cloud-test-resources)
-            - $(sub-config-cosmos-azure-cloud-test-resources)
+#            - $(sub-config-cosmos-azure-cloud-test-resources)
       MatrixConfigs:
         - Name: Cosmos_live_test_integration
           Path: sdk/cosmos/integration-matrix.json
