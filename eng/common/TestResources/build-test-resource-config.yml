@@ -1,4 +1,6 @@
 parameters:
+  - name: Cloud
+    type: string
   - name: SubscriptionConfiguration
     type: string
     default: $(sub-config-azure-cloud-test-resources)
@@ -13,7 +15,7 @@ steps:
     displayName: bbp template
 
   - pwsh: |
-      echo ${{ parameters.CloudConfig.Cloud }}
+      echo ${{ parameters.Cloud }}
     displayName: bbp each
 
   - ${{ if parameters.SubscriptionConfiguration }}:
