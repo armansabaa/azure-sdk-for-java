@@ -121,6 +121,10 @@ stages:
             JobTemplatePath: /eng/pipelines/templates/jobs/live.tests.yml
             AdditionalParameters:
               PreSteps:
+                - pwsh: |
+                    echo ${{ cloud.key }}
+                    echo ${{ convertToJson(cloud.value.SubscriptionConfigurations) }}
+                  displayName: bbp stage
                 - ${{ parameters.PlatformPreSteps }}
                 - ${{ parameters.PreSteps }}
               PostSteps:
