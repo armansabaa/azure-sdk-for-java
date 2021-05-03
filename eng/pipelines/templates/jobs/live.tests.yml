@@ -48,8 +48,8 @@ jobs:
           AgentImage: $(OSVmImage)
 
       - pwsh: |
-          echo ${{ parameters.SubscriptionConfiguration }}
-          echo ${{ parameters.SubscriptionConfigurations }}
+          echo ${{ convertToJson(parameters.SubscriptionConfiguration) }}
+          echo ${{ convertToJson(parameters.SubscriptionConfigurations) }}
           echo 'disable ${{ parameters.DisableAzureResourceCreation }}'
         displayName: bbp live
 
