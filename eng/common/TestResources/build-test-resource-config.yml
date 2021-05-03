@@ -12,10 +12,9 @@ steps:
       echo ${{ convertToJson(parameters.SubscriptionConfigurations) }}
     displayName: bbp template
 
-  - ${{ each param in parameters.SubscriptionConfigurations }}:
-      - pwsh: |
-          echo foo
-        displayName: bbp each
+  - pwsh: |
+      echo ${{ parameters.CloudConfig.Cloud }}
+    displayName: bbp each
 
   - ${{ if parameters.SubscriptionConfiguration }}:
     - pwsh: |
